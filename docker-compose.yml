@@ -1,0 +1,9 @@
+services:
+  meera-website:
+    build: .
+    ports:
+      - "5173:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    container_name: meera_personal_website
