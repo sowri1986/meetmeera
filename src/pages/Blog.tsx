@@ -8,67 +8,19 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Understanding PECS: A Parent's Journey to Communication",
-      excerpt: "How Picture Exchange Communication System transformed my child's ability to express needs and connect with family. A personal and professional perspective on implementing PECS at home.",
-      category: "Communication",
-      date: "2024-01-15",
-      readTime: "8 min read",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Creating Sensory Corners at Home: DIY Solutions That Work",
-      excerpt: "Simple, budget-friendly ways to create calming sensory spaces using household items. Practical tips from both classroom and home experience.",
-      category: "Sensory Support",
-      date: "2024-01-10",
-      readTime: "6 min read",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "Debunking Autism Myths: Facts Every Educator Should Know",
-      excerpt: "Addressing common misconceptions about autism and providing evidence-based information to support better understanding in educational settings.",
-      category: "Autism Awareness",
-      date: "2024-01-05",
-      readTime: "10 min read",
-      featured: true
-    },
-    {
-      id: 4,
-      title: "Colourful Semantics in Practice: Building Sentence Structure",
-      excerpt: "Step-by-step guide to implementing Colourful Semantics to support language development, with real examples from classroom experience.",
-      category: "Language Development",
-      date: "2023-12-28",
-      readTime: "7 min read",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Parent-Educator Collaboration: Building Bridges for Success",
-      excerpt: "How to create effective partnerships between home and school to support children with special educational needs. Communication strategies that work.",
-      category: "Collaboration",
-      date: "2023-12-20",
-      readTime: "9 min read",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Zones of Regulation: Helping Children Navigate Emotions",
-      excerpt: "Practical implementation of the Zones of Regulation framework in both classroom and home settings to support emotional self-regulation.",
-      category: "Behavior Support",
-      date: "2023-12-15",
-      readTime: "8 min read",
-      featured: false
+      title: "Connecting through play - the beginning of my journey",
+      excerpt: "Supporting parents and carers of autistic children matters deeply because many, like myself, start out unaware of what autism truly is. Often, even doctors need to conduct numerous tests before confidently confirming an autism diagnosis, which can be frustrating and confusing for families.",
+      category: "Personal Journey",
+      date: "2025-07-24",
+      readTime: "5 min read",
+      featured: true,
+      slug: "connecting-through-play-beginning-of-journey"
     }
   ];
 
   const categories = [
     { name: "All Posts", count: blogPosts.length, active: true },
-    { name: "Communication", count: 2, active: false },
-    { name: "Sensory Support", count: 1, active: false },
-    { name: "Autism Awareness", count: 1, active: false },
-    { name: "Language Development", count: 1, active: false },
-    { name: "Collaboration", count: 1, active: false }
+    { name: "Personal Journey", count: 1, active: false }
   ];
 
   const featuredPosts = blogPosts.filter(post => post.featured);
@@ -100,7 +52,8 @@ const Blog = () => {
               
               <div className="grid md:grid-cols-2 gap-6">
                 {featuredPosts.map((post) => (
-                  <Card key={post.id} className="shadow-card border-border hover:shadow-floating transition-all duration-300 group">
+                <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Card className="shadow-card border-border hover:shadow-floating transition-all duration-300 group cursor-pointer">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="secondary">{post.category}</Badge>
@@ -133,6 +86,7 @@ const Blog = () => {
                       </div>
                     </CardContent>
                   </Card>
+                </Link>
                 ))}
               </div>
             </div>
@@ -146,37 +100,39 @@ const Blog = () => {
               
               <div className="space-y-6">
                 {recentPosts.map((post) => (
-                  <Card key={post.id} className="shadow-card border-border hover:shadow-soft transition-all duration-300 group">
-                    <CardContent className="p-6">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                        <div className="flex items-center space-x-4 mb-2 md:mb-0">
-                          <Badge variant="outline">{post.category}</Badge>
-                          <div className="flex items-center text-sm text-muted-foreground">
-                            <Calendar className="h-4 w-4 mr-1" />
-                            {new Date(post.date).toLocaleDateString('en-GB', { 
-                              day: 'numeric', 
-                              month: 'short', 
-                              year: 'numeric' 
-                            })}
+                  <Link key={post.id} to={`/blog/${post.slug}`}>
+                    <Card className="shadow-card border-border hover:shadow-soft transition-all duration-300 group cursor-pointer">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                          <div className="flex items-center space-x-4 mb-2 md:mb-0">
+                            <Badge variant="outline">{post.category}</Badge>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <Calendar className="h-4 w-4 mr-1" />
+                              {new Date(post.date).toLocaleDateString('en-GB', { 
+                                day: 'numeric', 
+                                month: 'short', 
+                                year: 'numeric' 
+                              })}
+                            </div>
                           </div>
+                          <div className="text-sm text-muted-foreground">{post.readTime}</div>
                         </div>
-                        <div className="text-sm text-muted-foreground">{post.readTime}</div>
-                      </div>
-                      
-                      <h3 className="font-serif text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {post.title}
-                      </h3>
-                      
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-                      
-                      <Button variant="ghost" size="sm" className="p-0 h-auto group-hover:text-primary transition-colors">
-                        Continue reading
-                        <ArrowRight className="h-4 w-4 ml-1" />
-                      </Button>
-                    </CardContent>
-                  </Card>
+                        
+                        <h3 className="font-serif text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        
+                        <Button variant="ghost" size="sm" className="p-0 h-auto group-hover:text-primary transition-colors">
+                          Continue reading
+                          <ArrowRight className="h-4 w-4 ml-1" />
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Highlights from "./pages/Highlights";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/blog/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/resume" element={<Resume />} />
             <Route path="/highlights" element={<Highlights />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
