@@ -7,7 +7,7 @@ const Resume = () => {
     {
       degree: "Level 3 Diploma in Supporting Teaching and Learning in Schools",
       institution: "South Thames College",
-      period: "Completing June 2025",
+      period: "2024-2025",
       description: "Comprehensive training in educational support, inclusive practices, and working with children with special educational needs."
     },
     {
