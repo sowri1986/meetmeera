@@ -15,12 +15,23 @@ const Blog = () => {
       readTime: "5 min read",
       featured: true,
       slug: "connecting-through-play-beginning-of-journey"
+    },
+    {
+      id: 2,
+      title: "Turning Everyday Moments into Therapy",
+      excerpt: "After reading my earlier blog, some of you might wonder, 'Is it really possible to get a autistic child to play in the park or even play together at home?' My answer is a confident yes! If your child isn't playing, it doesn't mean they don't want to, it often means they don't know how to play.",
+      category: "Life Skills",
+      date: "2025-08-07",
+      readTime: "5 min read",
+      featured: false,
+      slug: "turning-everyday-moments-into-therapy"
     }
   ];
 
   const categories = [
     { name: "All Posts", count: blogPosts.length, active: true },
-    { name: "Personal Journey", count: 1, active: false }
+    { name: "Personal Journey", count: blogPosts.filter(p => p.category === "Personal Journey").length, active: false },
+    { name: "Life Skills", count: blogPosts.filter(p => p.category === "Life Skills").length, active: false }
   ];
 
   const featuredPosts = blogPosts.filter(post => post.featured);
