@@ -2,54 +2,98 @@ import { ArrowLeft, Calendar, BookOpen, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import BlogPost2 from "./BlogPost2";
 
 const BlogPost = () => {
   const { slug } = useParams();
 
-  // In a real app, this would fetch the blog post by slug
-  const post = {
-    title: "Connecting through play - the beginning of my journey",
-    excerpt: "Supporing parents and carers of autistic children matters deeply because many, like myself, start out unaware of what autism truly is. Often, even doctors need to conduct numerous tests before confidently confirming an autism diagnosis, which can be frustrating and confusing for families.",
-    category: "Personal Journey",
-    date: "2025-07-24",
-    readTime: "5 min read",
-    author: "Meera",
-    content: `
+  // Define all posts here for now
+  const posts = [
+    {
+      slug: "connecting-through-play-beginning-of-journey",
+      title: "Connecting through play - the beginning of my journey",
+      excerpt: "Supporing parents and carers of autistic children matters deeply because many, like myself, start out unaware of what autism truly is. Often, even doctors need to conduct numerous tests before confidently confirming an autism diagnosis, which can be frustrating and confusing for families.",
+      category: "Personal Journey",
+      date: "2025-07-24",
+      readTime: "5 min read",
+      author: "Meera",
+      content: `
       <p class="text-lg leading-relaxed mb-6">
       
- Parents may feel overwhelmed when their child doesn’t respond to their name, shows repetitive behaviors, avoids eye contact, or doesn’t engage with other children, especially if they haven’t encountered the term "autism" before. Learning about autism can bring heartbreak as parents worry about their child’s current challenges and future well-being, leading to anxiety and distress. Sometimes we need to make big decisions for the children’s well-being. These decisions can range from changing them to the suitable special education, choosing the right support strategies to even moving to a new country if required like we did. Parents and carers must navigate these difficult emotions, build understanding, find hope and effective ways to support their children’s growth and happiness.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-In today’s blog, I want to share what parents can do immediately after their child has been identified as autistic.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-If you’re reading this, it’s likely you’ve recognized autism in your child. There are many interventions available such as Applied Behavior Analysis (ABA), Speech and Language Therapy, Occupational Therapy, Physical Therapy, Educational Programs, Augmentative and Alternative Communication (AAC), Social Skills Training, Sensory Integration Therapy, and more. It’s easy to feel overwhelmed wondering where to begin and which path to follow.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-My suggestion is simple: take time to sit, play, and enter your child’s world instead of rushing to therapy centres. Remember, your child has their whole life ahead to attend sessions. Just like our parents or grandparents sometimes started school late, young autistic children need time to play and connect with you, their siblings, and in the outdoors without pressure.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-I understand that outings like going to the park can be overwhelming for children, parents, and others. That’s why I take my son to the park during quiet times, like early mornings or late evenings. There’s more space, less crowd, and no judgment. He can explore freely such as running, climbing, or simply resting. For example, near our home is a busy ramp. When I noticed it emptied after 9 PM in summer, I began taking my son there. We run up and down the ramp together, slide, and relax. Moments like these are exactly what young autistic children need.
-Throughout this shared play, I made eye contact with my son, he joined in with me, initiated sliding, and followed my lead when it was time to go home. This is the connection all parents hope for and often the reason we reach out to therapists.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-In short, alongside professional therapies, never underestimate the power of simple, loving play. It builds bonds, communication, and trust foundations that support every step of your child’s journey.
-</p>
-
-<p class="text-lg leading-relaxed mb-6">
-Follow my blog for more experiences from a Special Mom and special educator.
-
-      
-      
+      Parents may feel overwhelmed when their child doesn’t respond to their name, shows repetitive behaviors, avoids eye contact, or doesn’t engage with other children, especially if they haven’t encountered the term "autism" before. Learning about autism can bring heartbreak as parents worry about their child’s current challenges and future well-being, leading to anxiety and distress. Sometimes we need to make big decisions for the children’s well-being. These decisions can range from changing them to the suitable special education, choosing the right support strategies to even moving to a new country if required like we did. Parents and carers must navigate these difficult emotions, build understanding, find hope and effective ways to support their children’s growth and happiness.
       </p>
-      
-         `
-  };
+      <p class="text-lg leading-relaxed mb-6">
+      In today’s blog, I want to share what parents can do immediately after their child has been identified as autistic.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      If you’re reading this, it’s likely you’ve recognized autism in your child. There are many interventions available such as Applied Behavior Analysis (ABA), Speech and Language Therapy, Occupational Therapy, Physical Therapy, Educational Programs, Augmentative and Alternative Communication (AAC), Social Skills Training, Sensory Integration Therapy, and more. It’s easy to feel overwhelmed wondering where to begin and which path to follow.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      My suggestion is simple: take time to sit, play, and enter your child’s world instead of rushing to therapy centres. Remember, your child has their whole life ahead to attend sessions. Just like our parents or grandparents sometimes started school late, young autistic children need time to play and connect with you, their siblings, and in the outdoors without pressure.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      I understand that outings like going to the park can be overwhelming for children, parents, and others. That’s why I take my son to the park during quiet times, like early mornings or late evenings. There’s more space, less crowd, and no judgment. He can explore freely such as running, climbing, or simply resting. For example, near our home is a busy ramp. When I noticed it emptied after 9 PM in summer, I began taking my son there. We run up and down the ramp together, slide, and relax. Moments like these are exactly what young autistic children need.
+      Throughout this shared play, I made eye contact with my son, he joined in with me, initiated sliding, and followed my lead when it was time to go home. This is the connection all parents hope for and often the reason we reach out to therapists.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      In short, alongside professional therapies, never underestimate the power of simple, loving play. It builds bonds, communication, and trust foundations that support every step of your child’s journey.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      Follow my blog for more experiences from a Special Mom and special educator.
+      </p>
+      `
+    },
+    {
+      slug: "turning-everyday-moments-into-therapy",
+      title: "Turning Everyday Moments into Therapy",
+      excerpt: "After reading my earlier blog, some of you might wonder, 'Is it really possible to get a autistic child to play in the park or even play together at home?' My answer is a confident yes! If your child isn't playing, it doesn't mean they don't want to, it often means they don't know how to play.",
+      category: "Life Skills",
+      date: "2025-08-07",
+      readTime: "5 min read",
+      author: "Meera",
+      content: `
+      <p class="text-lg leading-relaxed mb-6">
+      As parents, it's our role to gently introduce them to play and show them how things work, both indoors and outdoors.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      To avoid overwhelming, choose off-peak times so there's less pressure and fewer distractions. Use the playground equipment with your child by showing them how to slide, swing, climb, and see how your child responds. Sometimes, you'll be surprised at what they try or master when given a chance at their own pace.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      Everyday routines offer so many opportunities:
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      <strong>Washing vegetables together:</strong> Let your child help you turn the tap on and off, feeling the difference between hot and cold water. This encourages sensory awareness and teaches practical skills. When they try adjusting taps elsewhere in the house, use it as a chance to continue teaching and generalizing the skill.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      <strong>Tidying up after play:</strong> Encourage your child to return toys or their favorite items to their proper place. For example, my son loves kitchen utensils and uses them as part of his stim. Afterward, I guide him to return them to their respective place, or help put plates and cutlery into the dishwasher, and wipe down the table after meals. These tasks develop independence, build hand-eye coordination, and improve cognitive growth.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      <strong>Laundry tasks:</strong> Involve your child in removing clothes from the washing machine, hanging them to dry with pegs, or sorting laundry. These activities develop both fine motor (peg use) and gross motor (carrying clothes) skills.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      <strong>Organizing groceries:</strong> Let your child open packets (using safe scissors), pour rice, pasta, or lentils into jars, and feel the different textures. This builds sensory experience and helps them work through sensitivities to touch and texture.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      With patience and creativity, these daily tasks become enjoyable moments of connection and valuable learning. As parents and carers, we truly can nurture our children's independence, sensory processing, and motor skills at home, often in fun and unexpected ways. And sometimes, our children will surprise us. Once, my son pulled over his stepping stool, washed a vegetable cutter I'd left behind, and placed it on the drying rack (all on his own), just by imitating what he'd seen me do.
+      </p>
+      <p class="text-lg leading-relaxed mb-6">
+      Everyday life is full of therapy opportunities. By joining your child in these simple routines, you help them grow, gain confidence, and celebrate their unique abilities, one small step at a time. Training them at home playfully on everyday tasks will make them play with you in the park. To them imitation is the game that they are learning from you.
+      </p>
+      `
+    }
+  ];
+
+  const post = posts.find(p => p.slug === slug);
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h2 className="text-2xl font-bold">Blog post not found.</h2>
+        <Button asChild variant="ghost" className="ml-4">
+          <Link to="/blog">Back to Blog</Link>
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
