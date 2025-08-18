@@ -26,6 +26,17 @@ const Blog = () => {
       featured: false,
       slug: "turning-everyday-moments-into-therapy"
     }
+    ,
+    {
+      id: 3,
+      title: "Healthy Eating Starts at Home",
+      excerpt: "Healthy eating habits can be built at home through routines, gentle changes, and family modeling—start small, introduce variety, and use favorites wisely.",
+      category: "Life Skills",
+      date: "2025-08-18",
+      readTime: "6 min read",
+      featured: false,
+      slug: "healthy-eating-starts-at-home"
+    }
   ];
 
   const categories = [
