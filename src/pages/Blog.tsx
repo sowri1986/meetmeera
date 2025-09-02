@@ -37,6 +37,17 @@ const Blog = () => {
       featured: false,
       slug: "healthy-eating-starts-at-home"
     }
+    ,
+    {
+      id: 4,
+      title: "Teaching Grooming Skills to Our Neurodivergent Children: A Parent’s Journey",
+      excerpt: "A patient, personalized approach to nail clipping and haircuts—what finally worked for us.",
+      category: "Life Skills",
+      date: "2025-08-28",
+      readTime: "7 min read",
+      featured: false,
+      slug: "teaching-grooming-skills-neurodivergent-children-parents-journey"
+    }
   ];
 
   const categories = [
