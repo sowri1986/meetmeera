@@ -2,17 +2,18 @@ import { ArrowLeft, Calendar, BookOpen, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import BlogPost2 from "./BlogPost2";
+
 import ReactMarkdown from "react-markdown";
-import blogData from "../../data/blog-posts.json";
+import remarkBreaks from "remark-breaks";
+import { getPostBySlug } from "@/lib/blog";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const posts = blogData.posts;
+  const post = getPostBySlug(slug || "");
 
 
 
-  const post = posts.find(p => p.slug === slug);
+
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -73,6 +74,7 @@ const BlogPost = () => {
           {/* Article Content */}
           <div className="prose prose-lg max-w-none text-muted-foreground">
             <ReactMarkdown
+              remarkPlugins={[remarkBreaks]}
               components={{
                 // Custom renderer for headings to match current style
                 h3: ({ node, ...props }) => <h3 className="text-2xl font-semibold text-foreground mb-4" {...props} />,

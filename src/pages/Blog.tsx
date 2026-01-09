@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-import blogData from "../data/blog-posts.json";
+import { getAllPosts } from "@/lib/blog";
 
 const Blog = () => {
 
-  const blogPosts = blogData.posts;
+  const blogPosts = getAllPosts();
   const categories = [
     { name: "All Posts", count: blogPosts.length, active: true },
     { name: "Personal Journey", count: blogPosts.filter(p => p.category === "Personal Journey").length, active: false },
