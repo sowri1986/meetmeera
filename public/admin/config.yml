@@ -1,6 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: sowri1986/meetmeera # Replace with your actual repo
   branch: main
+  site_url: https://meetmeera.me
+  display_url: https://meetmeera.me
+  base_url: https://api.netlify.com # For Netlify Identity; change if self-hosting OAuth
+
+local_backend: true
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
