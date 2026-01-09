@@ -14,9 +14,10 @@ collections:
     label: "Blog"
     folder: "src/content/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - {label: "ID", name: "id", widget: "number", value_type: "int"}
+      - {label: "Slug", name: "slug", widget: "string", hint: "URL-friendly version of the title (e.g., my-blog-post)"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "text"}
       - {label: "Category", name: "category", widget: "select", options: ["Personal Journey", "Life Skills", "General"]}
