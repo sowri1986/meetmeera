@@ -1,5 +1,6 @@
 ---
 id: 7
+slug: test
 title: test
 excerpt: test
 category: General
@@ -9,3 +10,19 @@ featured: false
 author: Meera
 ---
 test
+
+
+
+test 2
+
+
+
+
+
+
+
+
+
+
+
+test 3
