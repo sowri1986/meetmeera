@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "data"
+    label: "Data"
+    files:
+      - name: "posts"
+        label: "Blog Posts"
+        file: "src/data/blog-posts.json"
+        
+        fields:
+          - name: "posts"
+            label: "Posts"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "number", value_type: "int"}
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Excerpt", name: "excerpt", widget: "text"}
+              - {label: "Category", name: "category", widget: "select", options: ["Personal Journey", "Life Skills", "General"]}
+              - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Read Time", name: "readTime", widget: "string"}
+              - {label: "Featured", name: "featured", widget: "boolean", default: false}
+              - {label: "Author", name: "author", widget: "string", default: "Meera"}
+              - {label: "Content", name: "content", widget: "markdown"}
